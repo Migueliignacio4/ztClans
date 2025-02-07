@@ -1,0 +1,21 @@
+name: ztClans
+version: 1.0.0
+main: net.razt.ztClans.ZtClans
+author: razt
+api-version: '1.13'
+description: A simple clans plugin.
+depend:
+  - PlaceholderAPI
+
+permissions:
+  ztclans.owner:
+    description: Permite usar comandos de dueño del clan.
+    default: op
+  ztclans.member:
+    description: Permite usar comandos básicos del clan.
+    default: true
+
+commands:
+  clan:
+    description: Comando principal para gestionar clanes.
+    permission: ztclans.member

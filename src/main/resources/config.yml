@@ -1,0 +1,57 @@
+
+#Data base
+
+database:
+  mysql:
+    host: localhost
+    port: 3306
+    database: ztclans
+    username: root
+    password: null
+
+
+#Wins leaderboard
+wins:
+  enabled: true
+  database: uhc
+  table-name: uhc_players
+  wins-column: wins
+  player-column: uuid
+#If u have a plugin with a win database you can use it
+
+
+#Messages
+messages:
+  prefix: '&b[ztClans] '
+  clan-name-exists: '&cYa existe un clan con ese nombre'
+  already-member: '&cYa eres miembro de un clan'
+  already-in-clan: '&cYa estas en un clan'
+  clan-created-error: '&cHa ocurrido un error al crear el clan'
+  clan-created: '&aClan creado con exito'
+  clan-not-found: '&cClan no encontrado'
+  no-members-in-clan: '&cNo hay miembros en el clan'
+  internal-error: '&cHa ocurrido un error interno'
+  handler-error: '&cHa ocurrido un error en %action%'
+  not-in-same-clan: '&cNo estas en el mismo clan'
+  not-in-clan: '&cNo estas en un clan'
+  clan-deleted: '&aClan eliminado con exito'
+  no-permission: '&cNo tienes permiso para usar este comando'
+  invitation-pending: '&eYa tienes una invitación pendiente'
+  no-pending-invitation: '&eNo tienes ninguna invitación pendiente.'
+  invitation-sent: '&eInvitación enviada con exito a %player%.'
+  invitation-received: '&eHas recibido una invitacion de %clan%. Puedes aceptarla con &a/clan accept'
+  invitation-accepted: '&eHas aceptado la invitacion.'
+  invitation-declined: '&eHas rechazado la invitacion.'
+  rank-name-updated: '&eTu rango ha sido cambiado a %rank%.'
+  cant-set-leader: '&cNo puedes cambiar el lider de tu clan'
+  cant-set-coleader: '&cNo puedes cambiar el co-leader de tu clan'
+  rank-already-set: '&cEl rango ya esta establecido'
+  rank-set: '&eRango %rank% establecido con exito a %player%'
+  your-rank-set: '&eTu rango ha sido establecido a %rank% con exito'
+  member-kicked: '&cHas expulsado a %player% de tu clan'
+  you-were-kicked: '&cHas sido expulsado de %clan%'
+  clan-info:
+    - "&6Información del clan: &e{clan}"
+    - "&6Líder: &e{leader}"
+    - "&6Miembros: &e{members}"
+    - "&6KDR: &e{kdr}"

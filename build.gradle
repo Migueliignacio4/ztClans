@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+}
+
+group = 'net.razt'
+version = '1.0.0'
+
+ext {
+    pluginVersion = version
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        url = "https://mvnrepository.com/artifact/com.mysql/mysql-connector-j"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+    maven {
+        url = 'https://repo.extendedclip.com/releases/'
+    }
+    maven {
+        url = 'https://repo.dmulloy2.net/repository/public/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.48.0.0'
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '9.2.0'
+    compileOnly 'me.clip:placeholderapi:2.11.6'
+}
+
+def targetJavaVersion = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+    sourceCompatibility = JavaVersion.toVersion(targetJavaVersion)
+    targetCompatibility = JavaVersion.toVersion(targetJavaVersion)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
